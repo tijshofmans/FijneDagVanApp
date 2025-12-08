@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_home"> <fragment
+    android:id="@+id/nav_home"
+    android:name="nl.fijnedagvan.app.HomeFragment"
+    android:label="Thuis"
+    tools:layout="@layout/fragment_home" >
+    <action
+        android:id="@+id/action_nav_home_to_detailFragment"
+        app:destination="@id/nav_detail" />
+</fragment>
+
+    <fragment
+        android:id="@+id/nav_detail"
+        android:name="nl.fijnedagvan.app.DetailFragment"
+        android:label="Details"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="dagVan"
+            app:argType="nl.fijnedagvan.app.DagVan" />
+        <action
+            android:id="@+id/action_nav_detail_to_self"
+            app:destination="@id/nav_detail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_overzicht"
+        android:name="nl.fijnedagvan.app.OverzichtFragment"
+        android:label="Overzicht"
+        tools:layout="@layout/fragment_overzicht" >
+        <action
+            android:id="@+id/action_nav_overzicht_to_nav_detail"
+            app:destination="@id/nav_detail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_search"
+        android:name="nl.fijnedagvan.app.SearchFragment"
+        android:label="Zoeken"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_detailFragment"
+            app:destination="@id/nav_detail" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/nav_menu"
+        android:name="nl.fijnedagvan.app.MenuFragment"
+        android:label="Menu"
+        tools:layout="@layout/fragment_menu_bottom_sheet" >
+        <action
+            android:id="@+id/action_menuFragment_to_aboutFragment"
+            app:destination="@id/nav_about" />
+        <action
+            android:id="@+id/action_menuFragment_to_contactFragment"
+            app:destination="@id/nav_contact" />
+        <action
+            android:id="@+id/action_menuFragment_to_settingsFragment"
+            app:destination="@id/nav_settings" />
+        <action
+            android:id="@+id/action_menuFragment_to_searchFragment"
+            app:destination="@id/nav_search" />
+    </dialog>
+
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="nl.fijnedagvan.app.AboutFragment"
+        android:label="Over Ons"
+        tools:layout="@layout/fragment_about" />
+    <action
+        android:id="@+id/action_nav_about_to_nav_detail"
+        app:destination="@id/nav_detail" />
+    <fragment
+        android:id="@+id/nav_contact"
+        android:name="nl.fijnedagvan.app.ContactFragment"
+        android:label="Contact"
+        tools:layout="@layout/fragment_contact" />
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="nl.fijnedagvan.app.SettingsFragment"
+        android:label="Instellingen"
+        tools:layout="@layout/fragment_settings" />
+
+
+
+</navigation>

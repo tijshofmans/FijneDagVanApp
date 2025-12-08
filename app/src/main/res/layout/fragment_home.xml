@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <!-- =================================================================== -->
+        <!-- == SECTIE 1: Vandaag vieren we... (BLIJFT BOVENAAN)              == -->
+        <!-- =================================================================== -->
+
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:contentDescription="@string/app_logo"
+            android:src="@drawable/fdvlogo" />
+
+        <TextView
+            android:id="@+id/tvTodayDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_horizontal"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="Het is vandaag 19 november" />
+
+        <TextView
+            android:id="@+id/tvTodayIntro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_horizontal"
+            android:textSize="16sp"
+            tools:text="We vieren vandaag de volgende Dagen:" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTodayEvents"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:nestedScrollingEnabled="false"
+            tools:itemCount="2"
+            tools:listitem="@layout/item_dag" />
+
+        <!-- Visuele scheidingslijn -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="?android:attr/listDivider" />
+
+        <!-- ===================================================================== -->
+        <!-- == SECTIE 2: Vind een 'Dag Van...' (Titel, Spinners)       == -->
+        <!-- ===================================================================== -->
+
+        <TextView
+            android:id="@+id/tvFindDayHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/vind_een_dag_van"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:text="Kijk welke Dag het is."
+                android:textSize="14sp"/>
+
+
+
+            <Spinner
+                android:id="@+id/spDag"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1" />
+
+            <Spinner
+                android:id="@+id/spMaand"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+
+
+        <!-- De Zoek-knop is hier verwijderd -->
+
+        <!-- ===================================================================== -->
+        <!-- == SECTIE 3: Resultaten (NU DIRECT ONDER DE SPINNERS)          == -->
+        <!-- ===================================================================== -->
+
+        <FrameLayout
+            android:id="@+id/selectedDayContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- De "Evenementen voor DATUM" Titel is hier verwijderd -->
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvSelectedDayEvents"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_dag" />
+
+                <TextView
+                    android:id="@+id/tvSelectedDayEmpty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:padding="16dp"
+                    android:text="@string/helaas_op_deze_datum_vieren_we_geen_dag_van"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- ===================================================================== -->
+        <!-- == SECTIE 4: De Kalender (NU ONDER DE RESULTATEN)                  == -->
+        <!-- ===================================================================== -->
+
+        <com.kizitonwose.calendar.view.CalendarView
+            android:id="@+id/cvCalendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cv_dayViewResource="@layout/calendar_day_layout"
+            app:cv_monthHeaderResource="@layout/calendar_day_legend"
+            app:cv_orientation="horizontal"
+            app:cv_outDateStyle="endOfGrid" />
+
+    </LinearLayout>
+</ScrollView>

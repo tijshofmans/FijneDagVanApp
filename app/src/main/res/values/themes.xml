@@ -1,0 +1,62 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.Fijnedagvan" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="android:textColorPrimary">@color/primary_text_color</item>
+        <item name="android:textColorSecondary">@color/secondary_text_color</item>
+        <item name="android:colorBackground">@color/white</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/primary_text_color</item>
+        <item name="switchStyle">@style/Widget.App.Switch</item>
+
+        <item name="colorControlActivated">@color/switch_active_color_red</item>
+    </style>
+
+    <style name="Theme.Fijnedagvan" parent="Base.Theme.Fijnedagvan" />
+
+    <style name="FragmentPageContainer">
+        <item name="android:paddingTop">100dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+    </style>
+    <style name="Widget.Calendar.Day" parent="android:Widget.TextView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="Calendar.HeaderText" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="autoSizeTextType" tools:targetApi="o">uniform</item>
+        <item name="autoSizeMinTextSize">14sp</item>
+        <item name="autoSizeMaxTextSize">22sp</item>
+        <item name="autoSizeStepGranularity">2sp</item>
+    </style>
+    <style name="Calendar.MonthCellText" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">24dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="Widget.App.Switch" parent="Widget.Material3.CompoundButton.Switch">
+        <item name="thumbTint">@color/switch_thumb_colors</item>
+        <item name="trackTint">@color/switch_track_colors</item>
+    </style>
+
+
+
+
+</resources>

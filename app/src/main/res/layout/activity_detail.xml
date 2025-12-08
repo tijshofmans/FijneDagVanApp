@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvDetailNaam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:text="Naam van de Dag" />
+
+        <TextView
+            android:id="@+id/tvDetailDatum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginTop="4dp"
+            tools:text="2025-06-06" />
+
+        <TextView
+            android:id="@+id/tvDetailInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textSize="16sp"
+            android:lineSpacingMultiplier="1.2"
+            tools:text="Hier komt de lange, uitgebreide omschrijving van de dag van. Deze tekst kan erg lang zijn en daarom zit alles in een ScrollView zodat de gebruiker kan scrollen als de tekst niet op het scherm past." />
+
+        <TextView
+            android:id="@+id/tvDetailWebsite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textSize="16sp"
+            android:text="Bezoek de website"
+            android:autoLink="web" />
+    </LinearLayout>
+</ScrollView>

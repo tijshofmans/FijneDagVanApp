@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#3ecbc9</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="link_blue">#0D47A1</color>
+    <color name="primary_text_color">#DE000000</color>
+    <color name="secondary_text_color">#8A000000</color>
+    <color name="icon_color">#FF000000</color>
+    <color name="calendar_day_text_color">@color/primary_text_color</color>
+    <color name="calendar_selected_day_background">#de2c2c</color>
+    <color name="calendar_selected_day_text">@color/white</color>
+    <color name="calendar_today_outline">@color/teal_700</color>
+    <color name="calendar_event_indicator">#3ecbc9</color>
+
+    <color name="switch_active_color_red">#FFde2c2c</color>
+    <color name="text_primary_dark">#FFFFFFFF</color>
+    <color name="text_secondary_dark">#B3FFFFFF</color>
+
+    <color name="app_switch_active_color">#FFde2c2c</color>
+    <color name="app_switch_inactive_color">#FFBDBDBD</color>
+    <color name="app_switch_active_track_color">#40de2c2c</color>
+
+    <color name="switch_color_active">#FFde2c2c</color>
+    <color name="switch_color_inactive">#FFBDBDBD</color>
+    <color name="switch_color_track_active">#40de2c2c</color> ```
+
+
+</resources>

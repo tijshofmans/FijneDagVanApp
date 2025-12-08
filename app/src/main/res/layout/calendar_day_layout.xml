@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:clipToPadding="false">
+
+    <TextView
+        android:id="@+id/calendarDayText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textSize="14sp"
+        tools:text="22" />
+
+    <LinearLayout
+        android:id="@+id/llEventIndicators"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal">
+
+        <View
+            android:id="@+id/eventIndicatorDot1"
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:background="@drawable/event_indicator_dot"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <View
+            android:id="@+id/eventIndicatorDot2"
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:layout_marginStart="2dp"
+            android:background="@drawable/event_indicator_dot"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/eventIndicatorPlus"
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:layout_marginStart="2dp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="+"
+            android:textColor="@color/calendar_event_indicator"
+            android:textSize="6sp"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+    </LinearLayout>
+
+</FrameLayout>

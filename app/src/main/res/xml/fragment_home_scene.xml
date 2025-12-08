@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Basisstaat (voor normale telefoons) -->
+    <ConstraintSet android:id="@+id/base_state">
+        <!-- Info paneel neemt de volledige breedte in beslag en staat bovenaan -->
+        <Constraint
+            android:id="@+id/info_panel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- De gutter is onzichtbaar en heeft geen afmetingen -->
+        <Constraint
+            android:id="@+id/gutter"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@id/info_panel"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Kalender paneel staat onder het info paneel -->
+        <Constraint
+            android:id="@+id/calendar_panel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/info_panel" />
+    </ConstraintSet>
+
+    <!-- Staat voor opengevouwen apparaten (foldable) -->
+    <ConstraintSet android:id="@+id/foldable_state">
+        <!-- Info paneel is aan de linkerkant, een derde van de breedte -->
+        <Constraint
+            android:id="@+id/info_panel"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/gutter"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" >
+            <Layout
+                android:layout_marginStart="@dimen/foldable_margin_start"
+                android:layout_marginEnd="@dimen/foldable_gutter"/>
+        </Constraint>
+
+        <!-- De gutter is zichtbaar tussen de twee panelen -->
+        <Constraint
+            android:id="@+id/gutter"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/calendar_panel"
+            app:layout_constraintStart_toEndOf="@id/info_panel"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Kalender paneel is aan de rechterkant, twee derde van de breedte -->
+        <Constraint
+            android:id="@+id/calendar_panel"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintStart_toEndOf="@id/gutter"
+            app:layout_constraintTop_toTopOf="parent" >
+            <Layout
+                android:layout_marginStart="@dimen/foldable_gutter"
+                android:layout_marginEnd="@dimen/foldable_margin_end"/>
+        </Constraint>
+    </ConstraintSet>
+
+    <!-- De overgang tussen de twee staten -->
+    <Transition
+        app:constraintSetEnd="@+id/foldable_state"
+        app:constraintSetStart="@+id/base_state"
+        app:duration="300" />
+
+</MotionScene>

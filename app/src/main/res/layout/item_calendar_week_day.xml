@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="800dp"
+    android:padding="4dp">
+
+    <TextView
+        android:id="@+id/tvWeekDayNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="16" />
+
+    <TextView
+        android:id="@+id/tvWeekDayEventName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvWeekDayNumber"
+        tools:text="Internationale Dag van de Hamburger en aanverwante zaken"
+        tools:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/llWeekDayIndicators"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvWeekDayEventName"
+        app:layout_constraintVertical_bias="1.0"
+        tools:visibility="visible">
+
+        <View
+            android:id="@+id/eventIndicatorDot1"
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:background="@drawable/event_indicator_dot" />
+
+        <View
+            android:id="@+id/eventIndicatorDot2"
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:layout_marginStart="2dp"
+            android:background="@drawable/event_indicator_dot" />
+
+        <TextView
+            android:id="@+id/eventIndicatorPlus"
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:layout_marginStart="2dp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="+"
+            android:textColor="@color/calendar_event_indicator"
+            android:textSize="6sp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

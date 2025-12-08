@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Fijne Dag Van</string>
+    <string name="app_logo">App Logo</string>
+    <string name="vind_een_dag_van">Vind een \'Dag Van...\'</string>
+    <string name="zoek">Zoek</string>
+    <string name="helaas_op_deze_datum_vieren_we_geen_dag_van">Helaas, op deze datum vieren we geen \'Dag Van\'.</string>
+
+</resources>

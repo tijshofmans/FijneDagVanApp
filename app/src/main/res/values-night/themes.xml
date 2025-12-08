@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.Fijnedagvan" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:colorBackground">#121212</item>
+        <item name="colorSurface">#121212</item>
+
+        <item name="android:textColorPrimary">@color/text_primary_dark</item>
+        <item name="android:textColorSecondary">@color/text_secondary_dark</item>
+        <item name="colorOnSurface">@color/text_primary_dark</item>
+
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorControlActivated">@color/switch_active_color_red</item>
+
+        <item name="colorControlActivated">@color/app_switch_active_color</item>
+
+        <item name="switchStyle">@style/Widget.App.Switch</item>
+    </style>
+</resources>

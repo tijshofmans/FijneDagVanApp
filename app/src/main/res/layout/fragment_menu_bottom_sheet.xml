@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    tools:context=".MenuFragment">
+
+    <TextView
+        android:id="@+id/option_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:drawableStart="@drawable/ic_search"
+        android:drawablePadding="16dp"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:text="Zoeken"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/option_about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:drawableStart="@drawable/ic_info"
+        android:drawablePadding="16dp"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:text="Over Ons"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/option_contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:drawableStart="@drawable/ic_contact"
+        android:drawablePadding="16dp"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:text="Contact"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/option_settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Instellingen"
+        android:gravity="center_vertical"
+        android:textSize="18sp"
+        android:drawableStart="@drawable/ic_settings"
+        android:drawablePadding="16dp"
+        android:padding="16dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true" />
+
+</LinearLayout>

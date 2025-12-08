@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tvAboutText1" type="id" />
+    <item name="tvVerdienmodelHeader" type="id" />
+    <item name="tvVerdienmodelText" type="id" />
+</resources>

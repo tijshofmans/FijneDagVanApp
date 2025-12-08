@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/FragmentPageContainer"
+    tools:context=".AboutFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivLogoAbout"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:contentDescription="App Logo"
+            android:src="@drawable/fdvlogo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTitleAbout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Over Fijne Dag Van"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary_text_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivLogoAbout" />
+
+        <TextView
+            android:id="@+id/tvAboutText1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Fijne Dag Van is het grootste Nederlandse overzicht van Dagen Van. In ons overzicht staat $aantal Dagen zoals Nationale Secretaressedag, Dag van de Aarde, de Dag van de Buitenlands Gediplomeerde Tandarts of de Dag van de Duits-Nederlandse Rechtspraktijk.\n\nFijne Dag Van heeft een onafhankelijke redactie die alle Dagen verzamelt, categoriseert, beschrijft en bijhoudt. De redactie organiseert zelf nooit een Dag; alle Dagen die u ziet, bestaan echt en worden door externe organisaties gevierd.
+"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitleAbout" />
+
+        <ImageView
+            android:id="@+id/ivPlaceholderPhoto"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="Over ons foto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAboutText1"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <TextView
+            android:id="@+id/tvImageCaption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Het Fijne Dag Van-team tijdens Nationale Natuurwerkdag."
+            android:textSize="12sp"
+            android:textStyle="italic"
+            android:gravity="center_horizontal"
+            android:textColor="@color/secondary_text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivPlaceholderPhoto" />
+
+        <View
+            android:id="@+id/divider_about_1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvImageCaption" />
+
+        <!-- HET VERDIENMODEL BLOK IS HIER VOLLEDIG VERWIJDERD -->
+
+        <!-- De kop voor Algemene Voorwaarden wijst nu naar de eerste divider -->
+        <TextView
+            android:id="@+id/tvTermsHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Algemene voorwaarden"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary_text_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider_about_1" />
+
+        <TextView
+            android:id="@+id/tvTermsText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTermsHeader" />
+
+        <View
+            android:id="@+id/divider_about_3"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTermsText" />
+
+        <TextView
+            android:id="@+id/tvPrivacyHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Privacy"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary_text_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider_about_3" />
+
+        <TextView
+            android:id="@+id/tvPrivacyText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPrivacyHeader"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
