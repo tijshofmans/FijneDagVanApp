@@ -14,6 +14,11 @@ Bijzonderheden: Bevat logica om specifieke woorden in de tekst klikbaar te maken
 
 package nl.fijnedagvan.app
 
+/*
+Dit zijn de imports die nodig zijn voor de Over Ons-pagina
+ */
+
+
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -35,6 +40,19 @@ class AboutFragment : Fragment(R.layout.fragment_about) {
     private val sharedViewModel: SharedViewModel by activityViewModels()
     private var volledigeJaarLijst: List<DagVan> = emptyList()
 
+    /**
+     * Wordt aangeroepen direct nadat [onCreateView] is voltooid, maar voordat een eventuele
+     * opgeslagen staat is hersteld in de view.
+     *
+     * Deze functie is verantwoordelijk voor het initialiseren van de view. Het laadt de header-afbeelding
+     * met behulp van Coil en stelt een observer in op de `sharedViewModel.jaarLijst`. Zodra de lijst
+     * met dagen is ontvangen, wordt de lokale `volledigeJaarLijst` gevuld en wordt `setupTextViews`
+     * aangeroepen om de tekstuele inhoud van het scherm te configureren.
+     *
+     * @param view De View die is teruggegeven door [onCreateView].
+     * @param savedInstanceState Als dit niet-null is, wordt dit fragment opnieuw opgebouwd
+     * vanuit een eerder opgeslagen staat, zoals hier meegegeven.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -53,10 +71,8 @@ class AboutFragment : Fragment(R.layout.fragment_about) {
     }
 
     private fun setupTextViews() {
-        // --- BLOK 1: De Introductietekst ---
         val tvAboutText1: TextView = view?.findViewById(R.id.tvAboutText1) ?: return
 
-        // --- WIJZIGING 1: Extra alinea toegevoegd met een witregel (\n\n) ---
         val text1 = "Fijne Dag Van is het grootste Nederlandse overzicht van Dagen Van. In ons overzicht staan nu ${volledigeJaarLijst.size} Dagen zoals Nationale Secretaressedag, de Dag van de Aarde, de Dag van de Buitenlands Gediplomeerde Tandarts of de Dag van de Duits-Nederlandse Rechtspraktijk." +
                 "\n\nFijne Dag Van heeft een onafhankelijke redactie die alle Dagen verzamelt, categoriseert, beschrijft en bijhoudt. De redactie organiseert zelf nooit een Dag; alle Dagen die u ziet, bestaan echt en worden door externe organisaties gevierd."
 
@@ -90,6 +106,20 @@ class AboutFragment : Fragment(R.layout.fragment_about) {
         setupClickableText(tvPrivacyText, text3, externalLinks = externalLinks3)
     }
 
+    /**
+     * Makes specific parts of a text in a TextView clickable.
+     *
+     * This function takes a full string and two optional maps: one for internal links (navigating
+     * within the app) and one for external links (opening a URL in a browser). It finds the specified
+     * link texts within the full text and applies a `ClickableSpan` to them.
+     *
+     * @param textView The TextView where the clickable text will be displayed.
+     * @param fullText The complete string to be displayed in the TextView.
+     * @param internalLinks A map where the key is the text to be made clickable and the value is the
+     * name of the `DagVan` to navigate to.
+     * @param externalLinks A map where the key is the text to be made clickable and the value is the
+     * URL to open.
+     */
     private fun setupClickableText(textView: TextView, fullText: String, internalLinks: Map<String, String>? = null, externalLinks: Map<String, String>? = null) {
         val spannable = SpannableStringBuilder(fullText)
 
@@ -133,6 +163,14 @@ class AboutFragment : Fragment(R.layout.fragment_about) {
         }
     }
 
+    /**
+     * Navigeert naar het detailscherm voor een specifieke "DagVan".
+     *
+     * Deze functie maakt gebruik van de Navigation Component om de gebruiker van
+     * het "Over Ons"-scherm naar het detailscherm van de geselecteerde dag te sturen.
+     *
+     * @param dag Het [DagVan] object dat de data bevat voor het detailscherm dat getoond moet worden.
+     */
     private fun navigateToDetail(dag: DagVan) {
         val action = AboutFragmentDirections.actionNavAboutToNavDetail(dag)
         findNavController().navigate(action)
