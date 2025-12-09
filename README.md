@@ -18,4 +18,4 @@ De huidige versie is versie 0.1. In deze versie zitten de volgende functies:
 Het is hier mogelijk issues aan te maken met feature requests.
 
 ## versie 0.2
-In deze nieuwe versie gaan we code documenteren.
+De branch 'Documentatie' is een branch waarin we de code goed gaan documenteren. De pagina's en werking van de code zijn wel goed gedocumenteerd, maar de code snippets zelf nog niet.
