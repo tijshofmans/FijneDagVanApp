@@ -16,3 +16,6 @@ De huidige versie is versie 0.1. In deze versie zitten de volgende functies:
 - Enkele statische pagina's met Over Ons en Contact
 
 Het is hier mogelijk issues aan te maken met feature requests.
+
+## versie 2.0
+In deze nieuwe versie gaan we code documenteren
