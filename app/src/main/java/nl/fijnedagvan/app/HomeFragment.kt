@@ -79,7 +79,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupUI() {
-        binding.tvTodayDate.text = "Het is vandaag ${formatDateToDisplay(today)}"
+        binding.tvTodayDate.text = "Hallo, het is vandaag ${formatDateToDisplay(today)}"
 
         // Initialiseer beide RecyclerViews
         setupTodayRecyclerView()
