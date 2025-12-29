@@ -205,4 +205,43 @@ object DataCacheManager {
         Log.e(DEBUG_TAG, "Parser: Beide parsing pogingen zijn mislukt.")
         return emptyList()
     }
+    // --- FUNFACTS ---
+    // Cache voor de funfacts
+    private var funFactsCache: List<FunFact>? = null
+
+    // Functie om de funfacts te verversen vanuit de API
+    suspend fun refreshFunFacts(context: Context) {
+        withContext(Dispatchers.IO) {
+            try {
+                // CORRECT: Gebruik de bestaande fetchDataFromApi functie met de nieuwe parameter
+                val networkJson = fetchDataFromApi("?action=funfacts")
+                    ?: throw IOException("Kon funfacts niet ophalen van de API. (networkJson is null)")
+
+                val funFactListType = object : TypeToken<List<FunFact>>() {}.type
+                val funFacts: List<FunFact> = Gson().fromJson(networkJson, funFactListType)
+
+                funFactsCache = funFacts
+                Log.d("DataCacheManager", "Fun facts succesvol ververst en in cache geplaatst. Aantal: ${funFacts.size}")
+
+            } catch (e: Exception) {
+                Log.e("DataCacheManager", "Fout bij het verversen van fun facts", e)
+                // Gooi de exceptie door zodat de Worker weet dat er iets misging
+                throw e
+            }
+        }
+    }
+
+    // Functie om een willekeurig funfact uit de cache te halen
+    fun getRandomFunFact(context: Context): FunFact? {
+        // Als de cache leeg is, kunnen we niets teruggeven.
+        // De Worker zorgt ervoor dat de cache normaal gesproken gevuld is.
+        if (funFactsCache.isNullOrEmpty()) {
+            Log.w("DataCacheManager", "Fun facts cache is leeg bij aanroep van getRandomFunFact.")
+            return null
+        }
+
+        // Retourneer een willekeurig feitje uit de lijst
+        return funFactsCache?.randomOrNull()
+    }
+
 }
